@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="platform:/resource/UseCase/metamodels/Usecase_MetaModel.ecore">
+  <relation xsi:type="Association" isAssociation="true" outgoing="//@case.0" incoming="//@actor.1"/>
+  <relation xsi:type="Association" isAssociation="true" outgoing="//@case.1" incoming="//@actor.1"/>
+  <relation xsi:type="Association" isAssociation="true" outgoing="//@case.1" incoming="//@actor.0"/>
+  <actor name="Contact Center Representative"/>
+  <actor name="Claimant"/>
+  <case name="Claim Intake"/>
+  <case name="Claim Inquiry"/>
+</System>

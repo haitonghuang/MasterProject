@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Deployment" nsURI="platform:/resource/Deployment/Metamodels/Deployment_MetaModel.ecore">
+  <eClassifiers xsi:type="ecore:EClass" name="Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subNode" upperBound="-1"
+        eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionEnvironment" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CommunicationPath" eSuperTypes="#//Association">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" lowerBound="1"
+        eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" lowerBound="1"
+        eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Deployment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deployOn" lowerBound="1"
+        eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectTo" lowerBound="1"
+        eType="#//Artifact"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectFrom" lowerBound="1"
+        eType="#//Artifact"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Artifact">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subArtifact" upperBound="-1"
+        eType="#//Artifact"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="System">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path" upperBound="-1" eType="#//CommunicationPath"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="#//Node"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deployment" upperBound="-1"
+        eType="#//Deployment" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artifact" upperBound="-1"
+        eType="#//Artifact" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relation" upperBound="-1"
+        eType="#//Relation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Artifact"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Artifact"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Composition" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Generalization" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Aggregation" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Realization" eSuperTypes="#//Relation"/>
+</ecore:EPackage>

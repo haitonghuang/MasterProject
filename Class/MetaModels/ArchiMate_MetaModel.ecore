@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ArchiMate" nsURI="platform:/resource/Class/MetaModels/ArchiMate_MetaModel.ecore">
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="child" upperBound="-1"
+        eType="#//BusinessObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="realizes" lowerBound="1"
+        upperBound="-1" eType="#//Representation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="realize" upperBound="-1"
+        eType="#//DataObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" lowerBound="1"
+        eType="#//BusinessObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" lowerBound="1"
+        eType="#//BusinessObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//DataObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//DataObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Representation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Contract" eSuperTypes="#//BusinessObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Segment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relation" upperBound="-1"
+        eType="#//Relation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="objects" upperBound="-1"
+        eType="#//BusinessObject" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//DataObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Specialization" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Aggregation" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Composition" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Realization" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="realizedBy" upperBound="-1"
+        eType="#//BusinessObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subObject" upperBound="-1"
+        eType="#//DataObject"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="platform:/resource/Activity/MetaModels/Activity_MetaModel.ecore">
+  <Model>
+    <activityEdges xsi:type="ControlFlow" source="/0/@activityNodes.3" target="/0/@activityNodes.0" id="001"/>
+    <activityEdges xsi:type="ControlFlow" source="/0/@activityNodes.0" target="/0/@activityNodes.1" id="002">
+      <inActivity href="archi_model.xmi#//@behavior.0"/>
+    </activityEdges>
+    <activityEdges xsi:type="ControlFlow" source="/0/@activityNodes.1" target="/0/@activityNodes.2" id="003">
+      <inActivity href="archi_model.xmi#//@behavior.0"/>
+    </activityEdges>
+    <activityNodes xsi:type="Action" name="Underwrite Risk"/>
+    <activityNodes xsi:type="Action" name="Produce Policy"/>
+    <activityNodes xsi:type="Action" name="Accept Policy"/>
+    <activityNodes xsi:type="Action" name="Request for Insurance Received"/>
+  </Model>
+  <InitialNode name="initial node"/>
+  <ControlFlow source="/1" target="/0/@activityNodes.3"/>
+  <FinalNode name="final node"/>
+  <ControlFlow source="/0/@activityNodes.2" target="/3"/>
+  <InitialNode name="initial node"/>
+  <ControlFlow source="/5" target="/0/@activityNodes.0"/>
+</xmi:XMI>

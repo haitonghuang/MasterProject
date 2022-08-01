@@ -1,0 +1,221 @@
+-- @path DeploymentDiagram=/Deployment/Metamodels/Deployment_MetaModel.ecore
+-- @path ArchiMate=/Deployment/Metamodels/Archi_MetaModel.ecore
+
+module deploymentRules;
+create OUT : DeploymentDiagram from IN : ArchiMate;
+
+rule Model2System {
+	from
+		input: ArchiMate!Model
+	to
+		output: DeploymentDiagram!System (
+			view <- input.view,
+			path <- input.path,
+			node <- input.node,
+			deployment <- input.relation,
+			relation <- input.relation,
+			artifact <- input.artifact,
+			node <- input.network
+	)
+}
+
+------------Element
+rule Artifact2Artifact{
+	from
+		input: ArchiMate!Artifact
+	to 
+		output: DeploymentDiagram!Artifact (
+			fileName <- input.name,
+			subArtifact <- input.subArtifact
+			)
+}
+rule Node2Node {
+	from
+		input: ArchiMate!Node(
+			(not thisModule.isSystemSoftware(input)) and (not thisModule.isDevice(input))
+			)
+	to
+		output: DeploymentDiagram!Node(
+			name <- input.name,
+			subNode <- input.subNode
+			)
+}
+rule Device2Device {
+	from
+		input: ArchiMate!Device
+	to
+		output: DeploymentDiagram!Device(
+			name <- input.name,
+			subNode <- input.subNode
+		)
+}
+rule Path2Node {
+	from
+		input: ArchiMate!Path
+	to	
+		output: DeploymentDiagram!Node(
+			name <- input.name
+			)
+}
+rule CommunicationNetwork2Node {
+	from
+		input: ArchiMate!CommunicationNetwork
+	to
+		output: DeploymentDiagram!Node(
+			name <- input.name,
+			subNode <- input.subNetwork
+			)
+	
+}
+rule SystemSoftware2ExecutionEnvironment {
+	from
+		input: ArchiMate!SystemSoftware
+	to
+		output: DeploymentDiagram!ExecutionEnvironment(
+			name <- input.name,
+			subNode <- input.subNode
+			)
+}
+
+----------Relation-----------------------------
+
+--- transform composition between artifacts into deployment(dependency)
+rule Composition2Deployment {
+	from
+		input: ArchiMate!Composition(thisModule.isRelationshipBetweenArtifacts(input))
+	to 
+		output: DeploymentDiagram!Deployment (
+			connectTo <- input.targetOfArtifact,
+			connectFrom <- input.sourceOfArtifact
+			)
+}
+
+--- transform composition between artifact-node into deployment(dependency)
+rule Assignment2Deployment{
+	from
+		input: ArchiMate!Assignment(thisModule.isRelationshipBetweenNodeAndArtifact(input))
+	to 
+		output: DeploymentDiagram!Deployment (
+			connectTo <- input.targetOfArtifact,
+			deployOn <- input.sourceOfNode
+			)
+}
+
+--- transform specialization between artifacts into deployment(dependency)
+rule Specialization2Deployment {
+	from
+		input: ArchiMate!Specialization
+	to 
+		output: DeploymentDiagram!Deployment (
+			connectTo <- input.targetOfArtifact,
+			connectFrom <- input.sourceOfArtifact
+			)
+}
+--- transform association between artifacts into deployment(dependency)
+rule Association2Deployment {
+	from
+		input: ArchiMate!Association(thisModule.isRelationshipBetweenArtifacts(input))
+	to 
+		output: DeploymentDiagram!Deployment (
+			connectTo <- input.targetOfArtifact,
+			connectFrom <- input.sourceOfArtifact
+			)
+}
+--- transform realization between path-network into communication path(association)
+rule Realization2CommunicationPath1 {
+	from
+		input: ArchiMate!Realization(not thisModule.isRelationshipBetweenNodes(input))
+	to
+		output: DeploymentDiagram!CommunicationPath(
+			incoming <- input.sourceOfNetwork,
+			outgoing <- input.inOutPath
+			)
+}
+--- transform realization between nodes into communication path
+rule Realization2CommunicationPath2 {
+	from
+		input: ArchiMate!Realization(thisModule.isRelationshipBetweenNodes(input))
+	to
+		output: DeploymentDiagram!CommunicationPath(
+			incoming <- input.sourceOfNode,
+			outgoing <- input.targetOfNode
+			)
+}
+--- transform association between node-network into communication path
+rule Association2CommunicationPath {
+	from
+		input: ArchiMate!Association(thisModule.isRelationshipBetweenNodeAndNetwork(input))
+	to
+		output: DeploymentDiagram!CommunicationPath(
+			incoming <- input.sourceOfNode,
+			outgoing <- input.targetOfNetwork
+			)
+}
+--- transform composition between nodes into communication path(association)
+rule Composition2CommunicationPath {
+	from
+		input: ArchiMate!Composition(thisModule.isRelationshipBetweenNodes(input))
+	to 
+		output: DeploymentDiagram!CommunicationPath (
+			incoming <- input.sourceOfNode,
+			outgoing <- input.targetOfNode
+			)
+}
+--- transform assignment between nodes into communication path(association)
+rule Assignment2CommunicationPath {
+	from
+		input: ArchiMate!Assignment(thisModule.isRelationshipBetweenNodes(input))
+	to 
+		output: DeploymentDiagram!CommunicationPath (
+			incoming <- input.sourceOfNode,
+			outgoing <- input.targetOfNode
+			)
+}
+--- transform aggregation into communication path(association)
+rule Aggregation2CommunicationPath {
+	from
+		input: ArchiMate!Aggregation
+	to 
+		output: DeploymentDiagram!CommunicationPath (
+			incoming <- input.sourceOfNode,
+			outgoing <- input.targetOfNode
+			)
+}
+---------------Helper
+helper def: isSystemSoftware(input: ArchiMate!Node): Boolean = 
+	if input.oclIsTypeOf(ArchiMate!SystemSoftware) = true 
+		then true
+		else false
+	endif
+;
+
+helper def: isDevice(input: ArchiMate!Node): Boolean = 
+	if input.oclIsTypeOf(ArchiMate!Device) = true 
+		then true
+		else false
+	endif
+;
+helper def: isRelationshipBetweenArtifacts(input: ArchiMate!Relation): Boolean = 
+	if (input.targetOfArtifact.oclIsKindOf(ArchiMate!Artifact) = true and input.sourceOfArtifact.oclIsKindOf(ArchiMate!Artifact) = true) 
+		then true
+		else false
+	endif
+;
+helper def: isRelationshipBetweenNodeAndArtifact(input: ArchiMate!Relation): Boolean = 
+	if input.targetOfArtifact.oclIsKindOf(ArchiMate!Artifact) = true and input.sourceOfNode.oclIsKindOf(ArchiMate!Node) = true
+		then true
+		else false
+	endif
+;
+helper def: isRelationshipBetweenNodeAndNetwork(input: ArchiMate!Relation): Boolean =
+	if input.sourceOfNode.oclIsKindOf(ArchiMate!Node)=true and input.targetOfNetwork.oclIsKindOf(ArchiMate!CommunicationNetwork)=true
+		then true
+		else false
+	endif
+;
+helper def: isRelationshipBetweenNodes(input: ArchiMate!Relation): Boolean =
+	if input.sourceOfNode.oclIsKindOf(ArchiMate!Node)=true and input.targetOfNode.oclIsKindOf(ArchiMate!Node)=true
+		then true
+		else false
+	endif
+;

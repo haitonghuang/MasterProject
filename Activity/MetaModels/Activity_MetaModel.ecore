@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Activity" nsURI="platform:/resource/Activity/MetaModels/Activity_MetaModel.ecore">
+  <eClassifiers xsi:type="ecore:EClass" name="Activity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partition" upperBound="-1"
+        eType="#//ActivityPartition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edge" upperBound="-1" eType="#//ActivityEdge"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="#//ActivityNode"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityPartition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subPartition" upperBound="-1"
+        eType="#//ActivityPartition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityEdge">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//ActivityNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//ActivityNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinedEdge" upperBound="-1"
+        eType="#//ActivityEdge"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inpartition" upperBound="-1"
+        eType="#//ActivityPartition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inActivity" upperBound="-1"
+        eType="#//Activity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inPartition" upperBound="-1"
+        eType="#//ActivityPartition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinedNodeFrom" upperBound="-1"
+        eType="#//ActivityNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refinedNodeTo" upperBound="-1"
+        eType="#//ActivityNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inactivity" upperBound="-1"
+        eType="#//Activity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlFlow" eSuperTypes="#//ActivityEdge"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//ActivityNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JoinNode" eSuperTypes="#//ActivityNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialNode" eSuperTypes="#//ActivityNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FinalNode" eSuperTypes="#//ActivityNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MergeNode" eSuperTypes="#//ActivityNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DecisionNode" eSuperTypes="#//ActivityNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activityEdges" upperBound="-1"
+        eType="#//ActivityEdge" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activities" upperBound="-1"
+        eType="#//Activity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activityNodes" upperBound="-1"
+        eType="#//ActivityNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activityPartitions" upperBound="-1"
+        eType="#//ActivityPartition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForkNode" eSuperTypes="#//ActivityNode"/>
+</ecore:EPackage>

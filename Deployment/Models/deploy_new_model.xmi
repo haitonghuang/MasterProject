@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="platform:/resource/Deployment/Metamodels/Deployment_MetaModel.ecore">
+  <node name="Quotation Virtual Host"/>
+  <node name="Purchase Virtual Host"/>
+  <node xsi:type="Device" name="Blade System"/>
+  <node xsi:type="ExecutionEnvironment" name="Hypervisor"/>
+  <node xsi:type="ExecutionEnvironment" name="Open Source Operating System"/>
+  <node xsi:type="ExecutionEnvironment" name="Proprietary Operating System"/>
+  <relation xsi:type="CommunicationPath" incoming="//@node.2" outgoing="//@node.3"/>
+  <relation xsi:type="CommunicationPath" incoming="//@node.3" outgoing="//@node.5"/>
+  <relation xsi:type="CommunicationPath" incoming="//@node.3" outgoing="//@node.4"/>
+  <relation xsi:type="CommunicationPath" incoming="//@node.0" outgoing="//@node.4"/>
+  <relation xsi:type="CommunicationPath" incoming="//@node.1" outgoing="//@node.5"/>
+</System>

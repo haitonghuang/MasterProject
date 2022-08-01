@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ArchiMate" nsURI="platform:/resource/TestUseCase/metamodels/Archi_MetaModel.ecore">
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessService">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serves" lowerBound="1"
+        upperBound="-1" eType="#//ActiveStructureElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActiveStructureElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isActor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCollaboration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessRole" eSuperTypes="#//ActiveStructureElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignFrom" lowerBound="1"
+        eType="#//BusinessActor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessActor" eSuperTypes="#//ActiveStructureElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignedTo" lowerBound="1"
+        eType="#//BusinessRole"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessCollaboration" eSuperTypes="#//ActiveStructureElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aggregates" lowerBound="2"
+        upperBound="-1" eType="#//ActiveStructureElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAssignment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSpecialization" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isServing" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" lowerBound="1"
+        eType="#//ActiveStructureElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" lowerBound="1"
+        eType="#//ActiveStructureElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="useFrom" lowerBound="1"
+        eType="#//BusinessService"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usedBy" lowerBound="1"
+        eType="#//ActiveStructureElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composedOf" lowerBound="1"
+        eType="#//BusinessService"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Specialization" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Serving" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" upperBound="-1"
+        eType="#//ActiveStructureElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="service" upperBound="-1"
+        eType="#//BusinessService" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relation" upperBound="-1"
+        eType="#//Relation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Composition" eSuperTypes="#//Relation"/>
+</ecore:EPackage>

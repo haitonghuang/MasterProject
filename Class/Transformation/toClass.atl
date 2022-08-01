@@ -1,0 +1,139 @@
+-- @path ClassDiagram=/Class/MetaModels/Class_MetaModel.ecore
+-- @path ArchiMate=/Class/MetaModels/ArchiMate_MetaModel.ecore
+
+module toClass;
+create OUT : ClassDiagram from IN : ArchiMate;
+
+rule Segment2Model {
+	from
+		input: ArchiMate!Segment
+	to
+		output: ClassDiagram!Model(
+			view <- input.view,
+			relation <- input.relation,
+			class <- input.objects,
+			class <- input.data
+			)
+}
+
+rule BusinessObject2Class {
+	from
+		input: ArchiMate!BusinessObject
+	to
+		output: ClassDiagram!Class(
+			name <- input.name
+			)
+}
+
+rule DataObject2Class {
+	from 
+		input: ArchiMate!DataObject
+	to
+		output: ClassDiagram!Class(
+			name <- input.name
+			)
+}
+-- objects may have association, specialization, aggregation, or composition relationships with other obejcts, according to the specification
+rule Specialization2Generalization {
+	from
+		input: ArchiMate!Specialization (thisModule.isBusinessObject(input))
+	to
+		output: ClassDiagram!Generalization(
+			source <- input.incoming,
+			target <- input.outgoing
+		)
+}
+rule Specialization2GeneralizationForData {
+	from
+		input: ArchiMate!Specialization (thisModule.isDataObject(input))
+	to
+		output: ClassDiagram!Generalization(
+			source <- input.source,
+			target <- input.target
+		)
+}
+
+
+rule Association2Association {
+	from
+		input: ArchiMate!Association(thisModule.isBusinessObject(input))
+	to
+		output: ClassDiagram!Association(
+			source <- input.incoming,
+			target <- input.outgoing
+			)
+}
+rule Association2AssociationForData {
+	from
+		input: ArchiMate!Association(thisModule.isDataObject(input))
+	to
+		output: ClassDiagram!Association(
+			source <- input.source,
+			target <- input.target
+			)
+}
+
+rule Aggregation2Aggregation {
+	from
+		input: ArchiMate!Aggregation(thisModule.isBusinessObject(input))
+	to
+		output: ClassDiagram!Aggregation(
+			source <- input.incoming,
+			target <- input.outgoing
+			)
+}
+rule Aggregation2AggregationForData {
+	from
+		input: ArchiMate!Aggregation(thisModule.isDataObject(input))
+	to
+		output: ClassDiagram!Aggregation(
+			source <- input.source,
+			target <- input.target
+			)
+}
+rule Composition2Composition {
+	from
+		input: ArchiMate!Composition(thisModule.isBusinessObject(input))
+	to
+		output: ClassDiagram!Composition(
+			source <- input.incoming,
+			target <- input.outgoing
+			)
+}
+rule Composition2CompositionForData {
+	from
+		input: ArchiMate!Composition(thisModule.isDataObject(input))
+	to
+		output: ClassDiagram!Composition(
+			source <- input.source,
+			target <- input.target
+			)
+}
+
+-- relationship between data objects and business obejcts
+rule Realization2Realization {
+	from
+		input: ArchiMate!Realization
+	to
+		output: ClassDiagram!Realization(
+			source <- input.outgoing,
+			target <- input.source
+		)
+}
+
+helper def: isBusinessObject(input:ArchiMate!Relation): Boolean =
+
+	if input.incoming.oclIsKindOf(ArchiMate!BusinessObject)= true and input.outgoing.oclIsKindOf(ArchiMate!BusinessObject) =true
+		then true
+		else false
+	endif
+;
+
+helper def: isDataObject(input:ArchiMate!Relation): Boolean =
+
+	if input.source.oclIsKindOf(ArchiMate!DataObject)= true and input.target.oclIsKindOf(ArchiMate!DataObject) =true
+		then true
+		else false
+	endif
+;
+

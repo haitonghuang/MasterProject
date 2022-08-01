@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="platform:/resource/Class/MetaModels/Class_MetaModel.ecore" view="Information_Structure_View">
+  <relation xsi:type="Composition" source="//@class.1" target="//@class.2"/>
+  <relation xsi:type="Composition" source="//@class.1" target="//@class.3"/>
+  <relation xsi:type="Composition" source="//@class.1" target="//@class.4"/>
+  <relation xsi:type="Aggregation" source="//@class.3" target="//@class.2"/>
+  <relation xsi:type="Aggregation" source="//@class.3" target="//@class.4"/>
+  <relation xsi:type="Aggregation" source="//@class.0" target="//@class.1"/>
+  <relation xsi:type="Realization" source="//@class.1" target="//@class.5"/>
+  <relation xsi:type="Realization" source="//@class.2" target="//@class.6"/>
+  <relation xsi:type="Realization" source="//@class.4" target="//@class.7"/>
+  <class name="Customer"/>
+  <class name="Customer File"/>
+  <class name="Insurance Request"/>
+  <class name="Insurance Policy"/>
+  <class name="Damage Claim"/>
+  <class name="Customer File Data"/>
+  <class name="Insurance Request Data"/>
+  <class name="Damage Claim Data"/>
+</Model>

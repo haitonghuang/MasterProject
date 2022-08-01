@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Segment xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="platform:/resource/Class/MetaModels/ArchiMate_MetaModel.ecore"
+    view="Information_Structure_View">
+  <relation
+      xsi:type="Composition"
+      incoming="//@objects.1"
+      outgoing="//@objects.2"/>
+  <relation
+      xsi:type="Composition"
+      incoming="//@objects.1"
+      outgoing="//@objects.3"/>
+  <relation
+      xsi:type="Composition"
+      incoming="//@objects.1"
+      outgoing="//@objects.4"/>
+  <relation
+      xsi:type="Aggregation"
+      incoming="//@objects.3"
+      outgoing="//@objects.2"/>
+  <relation
+      xsi:type="Aggregation"
+      incoming="//@objects.3"
+      outgoing="//@objects.4"/>
+  <relation
+      xsi:type="Aggregation"
+      incoming="//@objects.0"
+      outgoing="//@objects.1"/>
+  <relation
+      xsi:type="Realization"
+      outgoing="//@objects.1"
+      source="//@data.0"/>
+  <relation
+      xsi:type="Realization"
+      outgoing="//@objects.2"
+      source="//@data.1"/>
+  <relation
+      xsi:type="Realization"
+      outgoing="//@objects.4"
+      source="//@data.2"/>
+  <objects name="Customer"/>
+  <objects name="Customer File"/>
+  <objects name="Insurance Request"/>
+  <objects name="Insurance Policy"/>
+  <objects name="Damage Claim"/>
+  <data name="Customer File Data"/>
+  <data name="Insurance Request Data"/>
+  <data name="Damage Claim Data"/>
+</Segment>

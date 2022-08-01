@@ -1,0 +1,97 @@
+-- @path ComponentDiagram=/Component/Metamodels/Component_Metamodel.ecore
+-- @path ArchiMate=/Component/Metamodels/Archi_Metamodel.ecore
+
+module componentRules;
+create OUT : ComponentDiagram from IN : ArchiMate;
+
+rule Model2System {
+	from
+		input: ArchiMate!Model
+	to
+		output: ComponentDiagram!System(
+			view <- input.name,
+			components <- input.components,
+			interfaces <- input.interface,
+			relations <- input.relation
+			)
+}
+
+------------------------ Element
+rule ApplicationComponent2Component{
+	from
+		input: ArchiMate!ApplicationComponent
+	to
+		output: ComponentDiagram!Component(
+			name <- input.name,
+			requiredInterface <- input.usedBy->collect(e|e)
+			)
+}
+
+rule ApplicationInterface2Interface {
+	from
+		input: ArchiMate!ApplicationInterface
+		to 
+		output: ComponentDiagram!Interface(
+			name <- input.name
+		)
+}
+
+------------------------ Relation
+rule Realization2ComponentRealization {
+	from
+		input: ArchiMate!Realization
+	to
+		output: ComponentDiagram!ComponentRealization(
+			source <- input.incoming,
+			target<- input.outgoing
+		)
+}
+rule Specialization2Generalization {
+	from
+		input: ArchiMate!Specialization
+	to
+		output: ComponentDiagram!Generalization(
+			source <- input.incoming,
+			target <- input.outgoing
+		)
+}
+
+rule Serving2Dependency {
+	from
+		input:ArchiMate!Serving
+	to
+		output: ComponentDiagram!Dependency(
+			source <- input.incoming,
+			incoming <- input.source
+		)
+}
+
+rule Composition2Composition {
+	from 
+		input: ArchiMate!Composition(thisModule.isComposition(input))
+	to
+		output: ComponentDiagram!Composition(
+			source <- input.incoming,
+			target <- input.outgoing
+			)
+}
+
+rule Composition2Realization {
+	from 
+		input: ArchiMate!Composition(not thisModule.isComposition(input))
+	to
+		output: ComponentDiagram!ComponentRealization(
+			source <- input.incoming,
+			incoming <- input.source
+			)
+}
+
+-------------Helper----------------
+
+
+helper def: isComposition(input: ArchiMate!Relation): Boolean =
+	if input.outgoing.oclIsTypeOf(ArchiMate!ApplicationComponent) and input.incoming.oclIsTypeOf(ArchiMate!ApplicationComponent)
+		then true
+		else false
+	endif
+;

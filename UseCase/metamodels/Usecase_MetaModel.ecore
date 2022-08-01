@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="UseCase" nsURI="platform:/resource/TestUseCase/metamodels/Usecase_MetaModel.ecore">
+  <eClassifiers xsi:type="ecore:EClass" name="UseCase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extensionPoint" lowerBound="1"
+        upperBound="-1" eType="#//ExtensionPoint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedBy" lowerBound="1"
+        upperBound="-1" eType="#//Actor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Actor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Extend">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" lowerBound="1" upperBound="-1"
+        eType="#//ExtensionPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extendedCase" lowerBound="1"
+        upperBound="-1" eType="#//UseCase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extension" lowerBound="1"
+        upperBound="-1" eType="#//UseCase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Include">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includingCase" lowerBound="1"
+        upperBound="-1" eType="#//UseCase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="addition" lowerBound="1"
+        upperBound="-1" eType="#//UseCase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtensionPoint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Generalization" eSuperTypes="#//Relation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAssociation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isGeneralization" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Actor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" lowerBound="1"
+        eType="#//UseCase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" lowerBound="1"
+        eType="#//Actor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Actor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aggregate" lowerBound="1"
+        eType="#//UseCase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="System">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="view" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relation" upperBound="-1"
+        eType="#//Relation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actor" upperBound="-1"
+        eType="#//Actor" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="case" upperBound="-1" eType="#//UseCase"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

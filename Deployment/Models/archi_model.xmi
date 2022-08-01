@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Model xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="platform:/resource/Deployment/Metamodels/Archi_MetaModel.ecore">
+  <node name="Quotation Virtual Host"/>
+  <node name="Purchase Virtual Host"/>
+  <node xsi:type="Device"
+      name="Blade System"/>
+  <node xsi:type="SystemSoftware"
+      name="Hypervisor"/>
+  <node xsi:type="SystemSoftware"
+      name="Open Source Operating System"/>
+  <node xsi:type="SystemSoftware"
+      name="Proprietary Operating System"/>
+  <relation
+      xsi:type="Assignment"
+      sourceOfNode="//@node.2"
+      targetOfNode="//@node.3"/>
+  <relation
+      xsi:type="Assignment"
+      sourceOfNode="//@node.3"
+      targetOfNode="//@node.5"/>
+  <relation
+      xsi:type="Assignment"
+      sourceOfNode="//@node.3"
+      targetOfNode="//@node.4"/>
+  <relation
+      xsi:type="Composition"
+      sourceOfNode="//@node.0"
+      targetOfNode="//@node.4"/>
+  <relation
+      xsi:type="Composition"
+      sourceOfNode="//@node.1"
+      targetOfNode="//@node.5"/>
+</Model>

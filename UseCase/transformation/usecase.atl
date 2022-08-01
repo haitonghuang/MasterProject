@@ -1,0 +1,87 @@
+-- @path UseCase=/UseCase/metamodels/Usecase_MetaModel.ecore
+-- @path ArchiMate=/UseCase/metamodels/Archi_MetaModel.ecore
+
+module usecase;
+create OUT : UseCase from IN : ArchiMate;
+
+rule Model2System {
+	from
+		input: ArchiMate!Model
+	to
+		output: UseCase!System(
+			view <- input.view,
+			actor <- input.element,
+			relation <- input.relation,
+			case <- input.service
+			)
+}
+
+rule Service2UseCase {
+	from 
+		input: ArchiMate!BusinessService
+	to
+		output: UseCase!UseCase(
+			name <- input.name,
+			ownedBy <- input.serves
+		)
+}
+
+rule Role2Actor {
+	from
+		input: ArchiMate!BusinessRole
+	to
+		output: UseCase!Actor(
+			name <- input.name
+		)
+}
+
+rule Serving2Association {
+	from
+		input: ArchiMate!Serving
+	to
+		output: UseCase!Association(
+			incoming <- input.usedBy,
+			outgoing <- input.useFrom,
+			isAssociation <- true
+			)
+}
+rule Specialization2Generalization {
+	from 
+		input: ArchiMate!Specialization(thisModule.isSpecializationForActor(input))
+	to
+		output: UseCase!Generalization(
+			source <- input.incoming,
+			target <- input.outgoing,
+			isAssociation <- true
+			)
+}
+rule Composition2Generalization {
+	from 
+		input: ArchiMate!Composition
+	to
+		output: UseCase!Include(
+			 includingCase <- input.useFrom,
+			 addition <- input.composedOf
+			)
+}
+
+
+-------------------------------------------Helper------------------------------------------
+helper def: isSpecializationForActor(input:ArchiMate!Relation): Boolean =
+
+	if input.incoming.oclIsKindOf(ArchiMate!BusinessRole)= true and input.outgoing.oclIsKindOf(ArchiMate!BusinessRole) =true
+		then true
+		else false
+	endif
+;
+
+
+helper def: isSpecializationForService(input:ArchiMate!Relation): Boolean =
+
+	if input.useFrom.oclIsKindOf(ArchiMate!BusinessService)= true and input.composedOf.oclIsKindOf(ArchiMate!BusinessService) =true
+		then true
+		else false
+	endif
+;
+
+

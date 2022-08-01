@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_9GpkMP3UEeydUolCbjHDxg" type="Ecore" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_CoNIQP3VEeydUolCbjHDxg" type="2001" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:DecorationNode" xmi:id="_CoNIQv3VEeydUolCbjHDxg" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_CoNIQ_3VEeydUolCbjHDxg" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_EN8-EP3VEeydUolCbjHDxg" type="3001">
+        <element xmi:type="ecore:EAttribute" href="Archi_Metamodel.ecore#//ApplicationInterface/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_EN8-Ef3VEeydUolCbjHDxg"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_CoNIRP3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_CoNIRf3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_CoNIRv3VEeydUolCbjHDxg" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_CoNIR_3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_CoNISP3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_CoNvUP3VEeydUolCbjHDxg" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_CoNvUf3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_CoNvUv3VEeydUolCbjHDxg"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="Archi_Metamodel.ecore#//ApplicationInterface"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CoNIQf3VEeydUolCbjHDxg" x="375" y="92" width="122"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_HdVrMP3VEeydUolCbjHDxg" type="2001" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:DecorationNode" xmi:id="_HdVrMv3VEeydUolCbjHDxg" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_HdVrM_3VEeydUolCbjHDxg" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_KnrgQP3VEeydUolCbjHDxg" type="3001">
+        <element xmi:type="ecore:EAttribute" href="Archi_Metamodel.ecore#//ApplicationComponent/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_KnrgQf3VEeydUolCbjHDxg"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_HdVrNP3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_HdVrNf3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_HdVrNv3VEeydUolCbjHDxg" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_HdVrN_3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_HdVrOP3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_HdVrOf3VEeydUolCbjHDxg" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_HdVrOv3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_HdVrO_3VEeydUolCbjHDxg"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="Archi_Metamodel.ecore#//ApplicationComponent"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HdVrMf3VEeydUolCbjHDxg" x="384" y="260" width="129"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_N3_acP3VEeydUolCbjHDxg" type="2001" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:DecorationNode" xmi:id="_N3_acv3VEeydUolCbjHDxg" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_N3_ac_3VEeydUolCbjHDxg" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_N3_adP3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_N3_adf3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_N3_adv3VEeydUolCbjHDxg" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_N3_ad_3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_N3_aeP3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_N3_aef3VEeydUolCbjHDxg" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_N3_aev3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_N3_ae_3VEeydUolCbjHDxg"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="Archi_Metamodel.ecore#//Relation"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_N3_acf3VEeydUolCbjHDxg" x="620" y="187" width="73"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_PFyqUP3VEeydUolCbjHDxg" type="2001" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:DecorationNode" xmi:id="_PFyqUv3VEeydUolCbjHDxg" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_PFzRYP3VEeydUolCbjHDxg" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_PFzRYf3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_PFzRYv3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_PFzRY_3VEeydUolCbjHDxg" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_PFzRZP3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_PFzRZf3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_PFzRZv3VEeydUolCbjHDxg" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_PFzRZ_3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_PFzRaP3VEeydUolCbjHDxg"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="Archi_Metamodel.ecore#//Realization"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PFyqUf3VEeydUolCbjHDxg" x="584" y="88" width="74"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_REDGwP3VEeydUolCbjHDxg" type="2001" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:DecorationNode" xmi:id="_REDGwv3VEeydUolCbjHDxg" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_REDGw_3VEeydUolCbjHDxg" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_REDGxP3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_REDGxf3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_REDt0P3VEeydUolCbjHDxg" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_REDt0f3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_REDt0v3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_REDt0_3VEeydUolCbjHDxg" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_REDt1P3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_REDt1f3VEeydUolCbjHDxg"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="Archi_Metamodel.ecore#//Association"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_REDGwf3VEeydUolCbjHDxg" x="672" y="88" width="86"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_S6E0QP3VEeydUolCbjHDxg" type="2001" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:DecorationNode" xmi:id="_S6FbUP3VEeydUolCbjHDxg" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_S6FbUf3VEeydUolCbjHDxg" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_S6FbUv3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_S6FbU_3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_S6FbVP3VEeydUolCbjHDxg" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_S6FbVf3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_S6FbVv3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_S6FbV_3VEeydUolCbjHDxg" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_S6FbWP3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_S6FbWf3VEeydUolCbjHDxg"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="Archi_Metamodel.ecore#//Composition"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_S6E0Qf3VEeydUolCbjHDxg" x="760" y="156" width="80"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_UjuSoP3VEeydUolCbjHDxg" type="2001" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Uju5sP3VEeydUolCbjHDxg" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_Uju5sf3VEeydUolCbjHDxg" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Uju5sv3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Uju5s_3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_Uju5tP3VEeydUolCbjHDxg" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Uju5tf3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Uju5tv3VEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_Uju5t_3VEeydUolCbjHDxg" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Uju5uP3VEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Uju5uf3VEeydUolCbjHDxg"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="Archi_Metamodel.ecore#//Serving"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UjuSof3VEeydUolCbjHDxg" x="752" y="232" width="66"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="__rLrkP3WEeydUolCbjHDxg" type="2001" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:DecorationNode" xmi:id="__rLrkv3WEeydUolCbjHDxg" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="__rLrk_3WEeydUolCbjHDxg" type="7001">
+      <children xmi:type="notation:Node" xmi:id="_Ba5VsP3XEeydUolCbjHDxg" type="3001">
+        <element xmi:type="ecore:EAttribute" href="Archi_Metamodel.ecore#//Model/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Ba5Vsf3XEeydUolCbjHDxg"/>
+      </children>
+      <styles xmi:type="notation:SortingStyle" xmi:id="__rLrlP3WEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="__rLrlf3WEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="__rLrlv3WEeydUolCbjHDxg" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="__rLrl_3WEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="__rLrmP3WEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="__rLrmf3WEeydUolCbjHDxg" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="__rLrmv3WEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="__rLrm_3WEeydUolCbjHDxg"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="Archi_Metamodel.ecore#//Model"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__rLrkf3WEeydUolCbjHDxg" x="536" y="384" width="88"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_LTye4P4CEeydUolCbjHDxg" type="2001" fontName=".AppleSystemUIFont">
+    <children xmi:type="notation:DecorationNode" xmi:id="_LTzF8P4CEeydUolCbjHDxg" type="5001"/>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_LTzF8f4CEeydUolCbjHDxg" type="7001">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LTzF8v4CEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LTzF8_4CEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_LTzF9P4CEeydUolCbjHDxg" type="7002">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LTzF9f4CEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LTzF9v4CEeydUolCbjHDxg"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_LTzF9_4CEeydUolCbjHDxg" type="7003">
+      <styles xmi:type="notation:SortingStyle" xmi:id="_LTzF-P4CEeydUolCbjHDxg"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_LTzF-f4CEeydUolCbjHDxg"/>
+    </children>
+    <element xmi:type="ecore:EClass" href="Archi_Metamodel.ecore#//Specialization"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LTye4f4CEeydUolCbjHDxg" x="714" y="321" width="91"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_9GpkMf3UEeydUolCbjHDxg"/>
+  <element xmi:type="ecore:EPackage" href="Archi_Metamodel.ecore#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_Yx7_gP3VEeydUolCbjHDxg" type="4002" source="_CoNIQP3VEeydUolCbjHDxg" target="_HdVrMP3VEeydUolCbjHDxg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Yx7_g_3VEeydUolCbjHDxg" visible="false" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Yx7_hP3VEeydUolCbjHDxg" x="-20" y="-13"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Yx7_hf3VEeydUolCbjHDxg" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Yx7_hv3VEeydUolCbjHDxg" x="-46" y="-3"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_Yx7_gf3VEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="ecore:EReference" href="Archi_Metamodel.ecore#//ApplicationInterface/uses"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Yx7_gv3VEeydUolCbjHDxg" points="[-1, 3, 0, -118]$[14, 112, 15, -9]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Yx9NoP3VEeydUolCbjHDxg" id="(0.8934426229508197,0.9491525423728814)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Yx9Nof3VEeydUolCbjHDxg" id="(0.7674418604651163,0.15254237288135594)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_fXkPsP3VEeydUolCbjHDxg" type="4002" source="_HdVrMP3VEeydUolCbjHDxg" target="_CoNIQP3VEeydUolCbjHDxg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_fXkPs_3VEeydUolCbjHDxg" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fXkPtP3VEeydUolCbjHDxg" x="-27" y="-4"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_fXkPtf3VEeydUolCbjHDxg" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_fXkPtv3VEeydUolCbjHDxg" x="-13" y="-4"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_fXkPsf3VEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="ecore:EReference" href="Archi_Metamodel.ecore#//ApplicationComponent/usedBy"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_fXkPsv3VEeydUolCbjHDxg" points="[3, -5, 0, 120]$[3, -65, 0, 60]$[3, -114, 0, 11]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fXmE4P3VEeydUolCbjHDxg" id="(0.5968992248062015,0.0847457627118644)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fXmE4f3VEeydUolCbjHDxg" id="(0.7295081967213115,0.8135593220338984)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_mrskoP3VEeydUolCbjHDxg" type="4002" source="_HdVrMP3VEeydUolCbjHDxg" target="_CoNIQP3VEeydUolCbjHDxg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_mrsko_3VEeydUolCbjHDxg" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_mrskpP3VEeydUolCbjHDxg" x="13" y="-16"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_mrskpf3VEeydUolCbjHDxg" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_mrskpv3VEeydUolCbjHDxg" x="-53"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_mrskof3VEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="ecore:EReference" href="Archi_Metamodel.ecore#//ApplicationComponent/composedOf"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mrskov3VEeydUolCbjHDxg" points="[-9, -3, -10, 139]$[-60, -138, -61, 4]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mruZ0P3VEeydUolCbjHDxg" id="(0.3953488372093023,0.05084745762711865)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_sEFloP3VEeydUolCbjHDxg" type="4002" source="_CoNIQP3VEeydUolCbjHDxg" target="_HdVrMP3VEeydUolCbjHDxg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_sEFlo_3VEeydUolCbjHDxg" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_sEFlpP3VEeydUolCbjHDxg" x="4" y="18"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_sEFlpf3VEeydUolCbjHDxg" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_sEFlpv3VEeydUolCbjHDxg" x="-14" y="7"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_sEFlof3VEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="ecore:EReference" href="Archi_Metamodel.ecore#//ApplicationInterface/composeIn"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sEFlov3VEeydUolCbjHDxg" points="[-1, 10, 0, -114]$[-11, 119, -10, -5]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sEHa0P3VEeydUolCbjHDxg" id="(0.16393442622950818,0.8305084745762712)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sEHa0f3VEeydUolCbjHDxg" id="(0.07751937984496124,0.0847457627118644)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_u_slsP3WEeydUolCbjHDxg" type="4002" source="_N3_acP3VEeydUolCbjHDxg" target="_CoNIQP3VEeydUolCbjHDxg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_u_sls_3WEeydUolCbjHDxg" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_u_sltP3WEeydUolCbjHDxg" x="-1" y="-1"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_u_sltf3WEeydUolCbjHDxg" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_u_sltv3WEeydUolCbjHDxg" x="-33"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_u_slsf3WEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="ecore:EReference" href="Archi_Metamodel.ecore#//Relation/source"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_u_slsv3WEeydUolCbjHDxg" points="[-1, -1, 145, 97]$[-124, -109, 22, -11]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_u_vB8P3WEeydUolCbjHDxg" id="(0.0136986301369863,0.2692307692307692)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_u_vB8f3WEeydUolCbjHDxg" id="(0.819672131147541,0.1864406779661017)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_yXhdIP3WEeydUolCbjHDxg" type="4002" source="_N3_acP3VEeydUolCbjHDxg" target="_CoNIQP3VEeydUolCbjHDxg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_yXiEMP3WEeydUolCbjHDxg" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yXiEMf3WEeydUolCbjHDxg" x="-30" y="-5"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_yXiEMv3WEeydUolCbjHDxg" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yXiEM_3WEeydUolCbjHDxg" x="-57" y="-10"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_yXhdIf3WEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="ecore:EReference" href="Archi_Metamodel.ecore#//Relation/target"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_yXhdIv3WEeydUolCbjHDxg" points="[-7, -5, 147, 92]$[-130, -97, 24, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yXirQP3WEeydUolCbjHDxg" id="(0.0958904109589041,0.6153846153846154)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_yXirQf3WEeydUolCbjHDxg" id="(0.8032786885245902,0.5084745762711864)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_1LyUgP3WEeydUolCbjHDxg" type="4002" source="_N3_acP3VEeydUolCbjHDxg" target="_HdVrMP3VEeydUolCbjHDxg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_1Ly7kP3WEeydUolCbjHDxg" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1Ly7kf3WEeydUolCbjHDxg" x="-1" y="1"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_1Ly7kv3WEeydUolCbjHDxg" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_1Ly7k_3WEeydUolCbjHDxg" x="-8" y="5"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_1LyUgf3WEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="ecore:EReference" href="Archi_Metamodel.ecore#//Relation/incoming"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_1LyUgv3WEeydUolCbjHDxg" points="[-11, 4, 128, -49]$[-120, 52, 19, -1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1L0JsP3WEeydUolCbjHDxg" id="(0.1780821917808219,0.9230769230769231)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_1L0Jsf3WEeydUolCbjHDxg" id="(0.8527131782945736,0.4745762711864407)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_5jVjkP3WEeydUolCbjHDxg" type="4002" source="_N3_acP3VEeydUolCbjHDxg" target="_HdVrMP3VEeydUolCbjHDxg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_5jVjk_3WEeydUolCbjHDxg" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5jVjlP3WEeydUolCbjHDxg" x="25" y="-5"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_5jVjlf3WEeydUolCbjHDxg" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_5jVjlv3WEeydUolCbjHDxg" x="-72" y="-17"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_5jVjkf3WEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="ecore:EReference" href="Archi_Metamodel.ecore#//Relation/outgoing"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5jVjkv3WEeydUolCbjHDxg" points="[-5, 2, 150, -67]$[-145, 72, 10, 3]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5jWxsP3WEeydUolCbjHDxg" id="(0.5205479452054794,0.9615384615384616)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5jXYwP3WEeydUolCbjHDxg" id="(0.9224806201550387,0.7796610169491526)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_HGVOgP3XEeydUolCbjHDxg" type="4004" source="_PFyqUP3VEeydUolCbjHDxg" target="_N3_acP3VEeydUolCbjHDxg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_HGVOgf3XEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HGVOgv3XEeydUolCbjHDxg" points="[1, 5, -15, -47]$[16, 52, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HGWcoP3XEeydUolCbjHDxg" id="(0.4594594594594595,0.9038461538461539)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HGWcof3XEeydUolCbjHDxg" id="(0.1917808219178082,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_HkUyEP3XEeydUolCbjHDxg" type="4004" source="_REDGwP3VEeydUolCbjHDxg" target="_N3_acP3VEeydUolCbjHDxg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_HkUyEf3XEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HkUyEv3XEeydUolCbjHDxg" points="[-5, 7, 32, -48]$[-37, 54, 0, -1]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HkVZIP3XEeydUolCbjHDxg" id="(0.3372093023255814,0.8653846153846154)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_HkVZIf3XEeydUolCbjHDxg" id="(0.6027397260273972,0.019230769230769232)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_H--GsP3XEeydUolCbjHDxg" type="4004" source="_S6E0QP3VEeydUolCbjHDxg" target="_N3_acP3VEeydUolCbjHDxg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_H--Gsf3XEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_H--Gsv3XEeydUolCbjHDxg" points="[-2, 0, 80, -18]$[-69, 14, 13, -4]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_H-_U0P3XEeydUolCbjHDxg" id="(0.025,0.6346153846153846)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_H-_U0f3XEeydUolCbjHDxg" id="(0.821917808219178,0.38461538461538464)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_IfKpsP3XEeydUolCbjHDxg" type="4004" source="_UjuSoP3VEeydUolCbjHDxg" target="_N3_acP3VEeydUolCbjHDxg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_IfKpsf3XEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_IfKpsv3XEeydUolCbjHDxg" points="[-3, -2, 74, 37]$[-62, -37, 15, 2]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IfLQwP3XEeydUolCbjHDxg" id="(0.045454545454545456,0.46153846153846156)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IfLQwf3XEeydUolCbjHDxg" id="(0.7945205479452054,0.5769230769230769)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_NRqvYP3XEeydUolCbjHDxg" type="4003" source="__rLrkP3WEeydUolCbjHDxg" target="_N3_acP3VEeydUolCbjHDxg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_NRrWcP3XEeydUolCbjHDxg" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_NRrWcf3XEeydUolCbjHDxg" x="-36" y="9"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_NRrWcv3XEeydUolCbjHDxg" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_NRrWc_3XEeydUolCbjHDxg" x="-73" y="10"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_NRqvYf3XEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="ecore:EReference" href="Archi_Metamodel.ecore#//Model/relation"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NRqvYv3XEeydUolCbjHDxg" points="[2, -6, -70, 156]$[78, -151, 6, 11]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NRskkP3XEeydUolCbjHDxg" id="(0.6590909090909091,0.1016949152542373)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NRskkf3XEeydUolCbjHDxg" id="(0.6301369863013698,0.7884615384615384)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_TmsXwP3XEeydUolCbjHDxg" type="4003" source="__rLrkP3WEeydUolCbjHDxg" target="_HdVrMP3VEeydUolCbjHDxg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Tms-0P3XEeydUolCbjHDxg" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Tms-0f3XEeydUolCbjHDxg" x="-21" y="7"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_Tms-0v3XEeydUolCbjHDxg" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Tms-0_3XEeydUolCbjHDxg" x="-32" y="10"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_TmsXwf3XEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="ecore:EReference" href="Archi_Metamodel.ecore#//Model/components"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TmsXwv3XEeydUolCbjHDxg" points="[0, 0, 71, 72]$[-56, -66, 15, 6]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TmuM8P3XEeydUolCbjHDxg" id="(0.375,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TmuM8f3XEeydUolCbjHDxg" id="(0.8837209302325582,0.8813559322033898)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_X98E0P3XEeydUolCbjHDxg" type="4003" source="__rLrkP3WEeydUolCbjHDxg" target="_CoNIQP3VEeydUolCbjHDxg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_X98r4P3XEeydUolCbjHDxg" type="6002">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_X98r4f3XEeydUolCbjHDxg" x="-18" y="96"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_X98r4v3XEeydUolCbjHDxg" type="6004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_X98r4_3XEeydUolCbjHDxg" x="-153" y="25"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_X98E0f3XEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="ecore:EReference" href="Archi_Metamodel.ecore#//Model/interface"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_X98E0v3XEeydUolCbjHDxg" points="[-44, -3, 100, 264]$[-256, -16, -112, 251]$[-256, -236, -112, 31]$[-205, -250, -61, 17]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_X996AP3XEeydUolCbjHDxg" id="(0.5,0.06779661016949153)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_TilsUP4CEeydUolCbjHDxg" type="4004" source="_LTye4P4CEeydUolCbjHDxg" target="_N3_acP3VEeydUolCbjHDxg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_TilsUf4CEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TilsUv4CEeydUolCbjHDxg" points="[0, 0, 74, 108]$[-37, -86, 37, 22]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Tim6cP4CEeydUolCbjHDxg" id="(0.17582417582417584,0.0)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_ETpDoP4HEeydUolCbjHDxg" type="4002" source="_HdVrMP3VEeydUolCbjHDxg" target="_HdVrMP3VEeydUolCbjHDxg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ETpqsP4HEeydUolCbjHDxg" type="6001">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ETpqsf4HEeydUolCbjHDxg" x="18" y="52"/>
+    </children>
+    <children xmi:type="notation:DecorationNode" xmi:id="_ETpqsv4HEeydUolCbjHDxg" type="6003">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ETpqs_4HEeydUolCbjHDxg" y="60"/>
+    </children>
+    <styles xmi:type="notation:FontStyle" xmi:id="_ETpDof4HEeydUolCbjHDxg" fontName=".AppleSystemUIFont"/>
+    <element xmi:type="ecore:EReference" href="Archi_Metamodel.ecore#//ApplicationComponent/realizes"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ETpDov4HEeydUolCbjHDxg" points="[87, -7, 87, -7]$[149, -11, 149, -11]$[149, 18, 149, 18]$[54, 42, 54, 42]$[6, 5, 6, 5]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ETrf4P4HEeydUolCbjHDxg" id="(0.32558139534883723,0.9152542372881356)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ETrf4f4HEeydUolCbjHDxg" id="(0.6046511627906976,0.9661016949152542)"/>
+  </edges>
+</notation:Diagram>

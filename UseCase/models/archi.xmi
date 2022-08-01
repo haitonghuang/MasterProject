@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Model xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="platform:/resource/TestUseCase/metamodels/Archi_MetaModel.ecore"
+    xsi:schemaLocation="platform:/resource/TestUseCase/metamodels/Archi_MetaModel.ecore ../metamodels/Archi_MetaModel.ecore">
+  <element xsi:type="BusinessRole"
+      name="Contact Center Representative"/>
+  <element xsi:type="BusinessRole"
+      name="Claimant"/>
+  <service name="Claim Intake"/>
+  <service name="Claim Inquiry"/>
+  <relation
+      xsi:type="Serving"
+      useFrom="//@service.0"
+      usedBy="//@element.1"/>
+  <relation
+      xsi:type="Serving"
+      useFrom="//@service.1"
+      usedBy="//@element.1"/>
+  <relation
+      xsi:type="Serving"
+      useFrom="//@service.1"
+      usedBy="//@element.0"/>
+</Model>

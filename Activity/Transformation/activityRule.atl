@@ -1,0 +1,205 @@
+-- @path ActivityDiagram=/Activity/MetaModels/Activity_MetaModel.ecore
+-- @path ArchiMate=/Activity/MetaModels/ArchiMate_MetaModel.ecore
+
+module activityRule;
+create OUT : ActivityDiagram from IN : ArchiMate;
+
+rule Segment2Model {
+	from
+		input: ArchiMate!Segment
+	to
+		output1: ActivityDiagram!Model(
+			view <- input.view,
+			activities <- input.behavior,
+			activityNodes <- input.behavior,
+			activityNodes <- input.event,
+			activityEdges <- input.relation,
+			activityNodes <- input.connectors
+			)
+}
+----------------------Elements---------------------------
+-- translate an event placed at the first position into an action with an initial node followed by a control flow
+rule BusinessEvent2Action {
+	from 
+		input: ArchiMate!BusinessEvent(thisModule.isInitialEvent(input))
+	to 
+		output: ActivityDiagram!Action(
+			name <- input.name
+			),
+		output1: ActivityDiagram!InitialNode(
+			name <- 'initial node'
+			),
+		output2:  ActivityDiagram!ControlFlow(
+			target <- output,
+			source <- output1
+			
+			)
+}
+-- translate business behavior elements that are not at the last position into action elements
+rule BusinessInternalBehavior2Action {
+	from 
+		input: ArchiMate!BusinessInternalBehavior(
+			not thisModule.isLastBusinessInternalBehavior(input) and not thisModule.isFirstBusinessInternalBehavior(input) 
+			and not thisModule.isActivity(input)
+			)
+	to
+		output: ActivityDiagram!Action(
+			name <- input.name
+			)
+}
+
+--generate a final node along with a control flow for the last business internal behavior
+rule LastBusinessIntenalBehavior2FinalNode {
+	from 
+		input: ArchiMate!BusinessInternalBehavior(thisModule.isLastBusinessInternalBehavior(input))
+	to
+		output: ActivityDiagram!Action( -- translate the final business internal behavior element into UML action
+			name <- input.name
+			),
+		output1: ActivityDiagram!FinalNode(
+			name <- 'final node'
+			),
+		output2: ActivityDiagram!ControlFlow(
+			source <- output,
+			target <- output1
+		)
+}
+--generate an initial node along with a control flow for the first business internal behavior
+rule FirstBusinessIntenalBehavior2InitialNode {
+	from 
+		input: ArchiMate!BusinessInternalBehavior(thisModule.isFirstBusinessInternalBehavior(input))
+	to
+		output: ActivityDiagram!Action( -- translate the initial business internal behavior element into UML action
+			name <- input.name
+			),
+		output1: ActivityDiagram!InitialNode(
+			name <- 'initial node'
+			),
+		output2: ActivityDiagram!ControlFlow(
+			source <- output1,
+			target <- output
+		)
+}
+
+
+
+---------------------Relation------------------------
+--translate triggering relation between business behaviors into control flow
+rule Trigger2ControlFlow1 {
+	from
+		input: ArchiMate!Triggering(
+			thisModule.isTriggeringBetweenInternalBehaviors(input)
+			)
+	to 
+		output: ActivityDiagram!ControlFlow(
+			id <- input.id,
+			target <- input.targetOfBehavior,
+			source <- input.sourceOfBehavior,
+			inActivity <- input.sourceOfBehavior.containIn
+			)
+}
+--translate triggering relation between business behaviors and business events into control flow
+rule Trigger2ControlFlow2 {
+	from
+		input: ArchiMate!Triggering(
+			thisModule.isTriggeringFromEvent2InternalBehavior(input)
+			)
+	to 
+		output: ActivityDiagram!ControlFlow(
+			id <- input.id,
+			target <- input.targetOfBehavior,
+			source <- input.sourceOfEvent
+			)
+}
+-- translate triggering from business behaviors to junctions into control flow
+rule Trigger2ControlFlow3 {
+	from
+		input: ArchiMate!Triggering(
+			thisModule.isTriggeringFromInternalBehavior2Junction(input)
+			)
+	to 
+		output: ActivityDiagram!ControlFlow(
+			id <- input.id,
+			target <- input.outgoing,
+			source <- input.sourceOfBehavior
+			)
+}
+-- translate triggering from junctions-business behaviors into control flow
+rule Trigger2ControlFlow4 {
+	from
+		input: ArchiMate!Triggering(
+			thisModule.isTriggeringFromJunction2InternalBehavior(input)
+			)
+	to 
+		output: ActivityDiagram!ControlFlow(
+			id <- input.id,
+			source <- input.incoming,
+			target <- input.targetOfBehavior
+			)
+}
+
+--------------------Helper--------------------------
+helper def: isTriggeringBetweenInternalBehaviors(input: ArchiMate!Relation): Boolean = 
+	if input.sourceOfBehavior.oclIsKindOf(ArchiMate!BusinessInternalBehavior) = true 
+	and input.targetOfBehavior.oclIsKindOf(ArchiMate!BusinessInternalBehavior) = true
+		then true
+		else false
+	endif
+;
+
+
+helper def: isTriggeringFromEvent2InternalBehavior(input: ArchiMate!Relation): Boolean = 
+	if input.sourceOfEvent.oclIsTypeOf(ArchiMate!BusinessEvent) = true 
+	and input.targetOfBehavior.oclIsKindOf(ArchiMate!BusinessInternalBehavior) = true
+		then true
+		else false
+	endif
+;
+helper def: isTriggeringFromInternalBehavior2Event(input: ArchiMate!Relation): Boolean = 
+	if input.sourceOfBehavior.oclIsKindOf(ArchiMate!BusinessInternalBehavior) = true 
+	and input.targetOfEvent.oclIsTypeOf(ArchiMate!BusinessEvent) = true
+		then true
+		else false
+	endif
+;
+helper def: isInitialEvent(input: ArchiMate!BusinessEvent): Boolean =
+	if input.TriggerFlowToBehavior.size()>0
+		then true
+		else false
+	endif
+;
+helper def: isLastBusinessInternalBehavior(input:ArchiMate!BusinessInternalBehavior): Boolean =
+	if input.next.size()=0 and input.prev.size()>0
+		then true
+		else false
+	endif
+
+;
+helper def: isFirstBusinessInternalBehavior(input:ArchiMate!BusinessInternalBehavior): Boolean =
+	if input.prev.size()=0 and input.next.size()>0
+		then true
+		else false
+	endif
+
+;
+helper def: isTriggeringFromInternalBehavior2Junction(input: ArchiMate!Relation): Boolean = 
+	if input.outgoing.oclIsKindOf(ArchiMate!RelationConnector) = true 
+	and input.sourceOfBehavior.oclIsKindOf(ArchiMate!BusinessInternalBehavior) = true
+		then true
+		else false
+	endif
+;
+helper def: isTriggeringFromJunction2InternalBehavior(input: ArchiMate!Relation): Boolean = 
+	if input.incoming.oclIsKindOf(ArchiMate!RelationConnector) = true
+	and input.targetOfBehavior.oclIsKindOf(ArchiMate!BusinessInternalBehavior) = true
+		then true
+		else false
+	endif
+;
+
+
+
+
+
+
+

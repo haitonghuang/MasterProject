@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Segment xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="platform:/research/Activity/MetaModels/ArchiMate_MetaModel.ecore"
+    xsi:schemaLocation="platform:/research/Activity/MetaModels/ArchiMate_MetaModel.ecore ../MetaModels/ArchiMate_MetaModel.ecore">
+  <behavior
+      xsi:type="BusinessProcess"
+      name="Issue New Policy"
+      composedOf="//@behavior.1 //@behavior.2 //@behavior.3"/>
+  <behavior
+      xsi:type="BusinessProcess"
+      name="Underwrite Risk"
+      next="//@behavior.2"
+      containIn="//@behavior.0"/>
+  <behavior
+      xsi:type="BusinessProcess"
+      name="Produce Policy"
+      next="//@behavior.3"
+      prev="//@behavior.1"
+      containIn="//@behavior.0"/>
+  <behavior
+      xsi:type="BusinessProcess"
+      name="Accept Policy"
+      prev="//@behavior.2"
+      containIn="//@behavior.0"/>
+  <event name="Request for Insurance Received"
+      TriggerFlowToBehavior="//@behavior.1"/>
+  <relation
+      xsi:type="Composition"
+      targetOfBehavior="//@behavior.1"
+      sourceOfBehavior="//@behavior.0"/>
+  <relation
+      xsi:type="Composition"
+      targetOfBehavior="//@behavior.2"
+      sourceOfBehavior="//@behavior.0"/>
+  <relation
+      xsi:type="Composition"
+      targetOfBehavior="//@behavior.3"
+      sourceOfBehavior="//@behavior.0"/>
+  <relation
+      xsi:type="Triggering"
+      targetOfBehavior="//@behavior.1"
+      id="001"
+      sourceOfEvent="//@event.0"/>
+  <relation
+      xsi:type="Triggering"
+      targetOfBehavior="//@behavior.2"
+      sourceOfBehavior="//@behavior.1"
+      id="002"/>
+  <relation
+      xsi:type="Triggering"
+      targetOfBehavior="//@behavior.3"
+      sourceOfBehavior="//@behavior.2"
+      id="003"/>
+</Segment>
